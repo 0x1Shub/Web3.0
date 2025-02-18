@@ -64,4 +64,14 @@ contract FundMe {
         require(msg.sender == i_owner, "Sender is not owner");
         _;
     }
+
+    // Someone send contract ETH without calling fund function
+
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
 }

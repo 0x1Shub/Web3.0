@@ -1,0 +1,3 @@
+[submodule "Cyfrin Updraft/03-Foundry Fundamentals/3.1-Foundry Simple Storage/01_hello_foundry/lib/forge-std"]
+	path = Cyfrin Updraft/03-Foundry Fundamentals/3.1-Foundry Simple Storage/01_hello_foundry/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std

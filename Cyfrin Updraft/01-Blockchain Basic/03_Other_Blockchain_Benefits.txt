@@ -1,0 +1,12 @@
+Smart Contract Value = Trust Minimised Aggrements
+- Decentralized, Many Node operators run blockchains
+- Transparency & Flexibility
+- Speed and Efficiency
+- Security and Immutability
+- Counterparty Risk Removal 
+
+
+1) What have smart contract done so far ??
+- Defi = Decentralized Finance
+- DAOs = Decentralized Autonomous Organizations
+- NFTs = Non Fungible Tokens

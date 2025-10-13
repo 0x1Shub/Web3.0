@@ -1,0 +1,21 @@
+1) What is the value of smart contact ?
+- Trust Minimised Aggrements
+- Unbreakable Promises
+
+2) The Purpose of smart contract is Immutable, Decentralized &b Transparent
+- A smart contact is an  agggrements contract or set of instructions that is deployed on a decentralized blockchain
+- Cannot be altered
+- Automatically executes
+- Everyone can sees the terms of the agggrements
+
+
+3) Key Features and Benefits
+- Decentralization
+- Transparency and Flexibility
+- Speed and Efficiency
+- Security and Immutability
+- Reduced Counterparty Risk
+- Trust Minimised agreements
+
+4) Chainlink
+Chainlink is a decentralized network that facilitates the creation of hybrid smart contracts. By combining on-chain logic with off-chain data and computation, they ensure that both the logic and the data remain decentralized.

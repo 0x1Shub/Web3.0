@@ -1,0 +1,14 @@
+Tenderly
+
+tenderly.co
+
+https://github.com/Cyfrin/foundry-full-course-cu
+
+
+Virtual Testnet
+Use tenderly Testnet because getting testnet faucet is really challenging
+
+Sepolia Is most Popular testnet
+
+
+1) Testnet Faucet : A place to get free testnet ETH

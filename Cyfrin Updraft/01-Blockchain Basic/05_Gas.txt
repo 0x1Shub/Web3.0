@@ -1,0 +1,12 @@
+1) Transaction Fee - Amount Paid to the block producer for processing the transaction.
+
+2) Gas Price - Cost per unit of gas specified for the transaction, in Ether and Gwei. The higher the gas price
+the higher gas price the higher chance of getting included in a block
+
+Transaction Fee = Gas Price * Gas Used
+
+3) What is Evm Codes ?
+"EVM Codes" refers to EVM opcodes, which are the low-level, machine-language instructions that the Ethereum Virtual Machine (EVM) executes to run smart contracts. Smart contracts are typically written in higher-level languages like Solidity, and are then compiled into this bytecode, which consists of a sequence of opcodes that perform operations like adding numbers, storing data, or calling other contracts.
+
+4) What is OPCODES ?
+In Ethereum, an opcode is a low-level, human-readable machine instruction that the Ethereum Virtual Machine (EVM) executes. Smart contracts are compiled into a sequence of these opcodes, which are represented by hexadecimal numbers, to perform specific actions such as arithmetic operations, storing data, and calling other contracts. Each opcode has a corresponding hexadecimal value (e.g., ADD is \(0x01\)) and a gas cost, with the total gas cost of a transaction determined by the opcodes it uses

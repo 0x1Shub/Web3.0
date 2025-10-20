@@ -1,0 +1,33 @@
+1) What is Hash ??
+A unique fixed length string, meant to indetify a piece of data. They are created by placing said data into a "hash function"
+
+SHA256 Algorithm
+
+2) Ethereum uses Keccak-256 Algorithm
+
+
+3) The miners need to find the nonce that solves the problem for mining. By keep trying the numbers
+
+
+4) Ethereum is Proof of Stake
+
+
+5) Genesis Block: 
+The first block in a blockchain
+
+6) Hash Algorithm : 
+A function that computes data into a unique hash
+
+7) What is mining ?? 
+The process of finding the "solution" to the blockchain "problem"
+In our example the "problem" was to find the hash that starts with four zeros.
+Nodes gets paid for mining block 
+
+8) What is Block ??
+A list of transactions mined together
+
+9) Nounce 
+A number used once to find the solution for a blockchain problem
+It is also used to define the transaction number for an account/address
+
+

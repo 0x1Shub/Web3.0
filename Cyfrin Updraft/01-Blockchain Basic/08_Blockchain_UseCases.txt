@@ -1,0 +1,64 @@
+1) Different Types of Tokens ??
+- Non-fungible Tokens
+- Semi-fungible Tokens 
+- Native Tokens 
+- Fungible Tokens
+
+
+2) Fungible Tokens: 
+- ERC 20 & Native Tokens are the Fungible Tokens.
+- ERC20 are fungible token created by smart contract. 
+- Native token are baked into the blockchain. This are the native currency of blockchain like ETH for Ethereum, SOL for Solana, etc.
+
+
+3) How Should I Swap my ETH to USDC ?? How to buy the governance token to paticipate in voting ??
+- Using Exchanges
+- Exchanges have two categories - Centralized & Decentralized 
+
+
+4) Centralized Exchanges ??
+- The exchanges work a bit like the traditional stockbrokers.
+- Example. Coinbase and Binance
+- When your funds are actually on centralized exchange you dont actually control them. The exchange does. You trust them on platform.
+You dont have have the private key.
+
+NOT YOUR KEYS. NOT YOUR COINS
+
+- fast, Deep liquidity, User experience, On + Off Ramps
+
+5) What is On-Ramps and Off-Ramps ??
+- On-Ramps is the service that allows you to convert your traditional money like dollars into cryptocurrency.
+- Off-Ramps is the service that allows you to convert your cryoto back to your traditional money.
+
+
+6) Decentralized Exchanges (DEX) ??
+- Let you to trade your tokens directly from your wallet that you own. Without any company being in the middle controlling anything.
+- Uniswap is the largest DEX
+
+Centralized Exhanges use the Order Books. Where buyers ans sellers place there orders that get matched up.
+DEX instead used the Automatic Market Makers or AMMs and they work very differently. Instead of matching buyers with sellers, trades
+happens with something called liquidity pool.
+
+Liquidity Pool is the pool of tokens.
+Someone who deposite tokens into the pool is called liquidity provider and they have deposite equal value of two different tokens
+
+
+7) Decentralized Governance ??
+- Here the token holders are the decision makes.
+
+8) What is DAO (Decentralized Autonomous Organizations) ??
+- Its the smart contract that executes based on the votes.
+- This are governance tokens that lets community to used for voting. 
+- Any project or company that employes this decentralized governance is referred to DAO.
+
+9) How DAO Works ??
+- There is first proposal for any changes.
+- There is voting period. Where token holders connect there wallet and cast there votes by signing blockchain transactions.
+- The smart contract tracks the votes and how tokens back it. 
+- More token someone votes the more weight there vote has. 
+- When the voting end the smart contract tallies up all the results and if proposal passes then the changes will implemented.
+- No CEO or Board can reverse this decision
+
+
+
+

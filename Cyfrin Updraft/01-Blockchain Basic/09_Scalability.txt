@@ -77,3 +77,6 @@ They are released from a smart contract and sent to your wallet from the destina
 
 b) Minting and Burning Bridge Method:
 On the source chain the tokens are burned so they are send to the zero address, they are taken out of circulation, they are destroyed, they are no longer. Then token are minted to the destination chain, they are given to the user on the destination chain.
+
+11) Finality ??
+Finality in blockchain systems refers to the time taken from sending a transaction to when the transaction can be considered settled and therefore cannot be altered, reversed or canceled.

@@ -59,6 +59,7 @@ Someone who deposite tokens into the pool is called liquidity provider and they 
 - When the voting end the smart contract tallies up all the results and if proposal passes then the changes will implemented.
 - No CEO or Board can reverse this decision
 
-
-
+10) Challanges of DAO ??
+- Token holders not utilizing the voting rights.
+- Technincal Complexity
 

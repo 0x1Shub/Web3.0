@@ -1,0 +1,79 @@
+1) L1, L2 & Rollup ??
+- Ethereum Mainnet is the Layer 1 
+- Sepolia Testnet is the Layer 1
+- ZKSync Mainnet Layer 2 (L2) Rollup
+
+2) Layer 1 or L1 ??
+- A Layer 1 or L1 is a blockchain in its purest form, where the nodes contribute to sybil resistance. Help the chain to reach consensus
+- L1 is base layer of the blockchain ecosystem
+- Example: Bitcoin, Ethereum, Solana, BNB
+
+3) Layer 2 or L2 ??
+- Anything that hooks back into L1 is called a layer 2.
+- This layer 2 blockchain are referred to as Rollups
+
+3) Layer 2 Rollups ??
+- Blockchain roll-ups are L2 scaling solutions that increase the amount of transactions without increasing the gas cost.
+
+4) Explain Blockchain Trillema ??
+- In real world, we want blockchain should have three properties - Decentralized, Secure, Scalable
+- These thress properties together are known as the blockchain trillema, which states that blockchain can only ever have two out of three of these properties.
+
+
+5) Explain Rollups ??
+- Rollups aim to solve the blockchain trillema by increasing the throughput of the ethereum without sacrificing either the security or decentralization of the system.
+
+6) Types of Rollups ??
+- There are two main types of rollup, and the difference between them lies in how the rollup determines the validity of the batch of the transactions, how they verify that transactions are legitimate rather than fradulent.
+
+- Optimistic Rollups: 
+Assumption: Transactions are valid
+There is time period known as challange period. durin this period other operator or validators can challange the valid state of the blockchain. They do this by sending what's called a challange.
+This is called the fraud proof.
+
+- Zero Knowledge Rollups (ZK Rollups):
+It is the cryptographic technique that allows you to prove something, like state transitions are valid, and the computation was done correctly without revealing any information about it.
+ZK Rollups have two entities. 
+Prover : They trying to prove something.
+Verifier: They trying to verify something.
+
+
+8) Centralized Sequencer ??
+- Sequencer is the one of the type of operator associated with roll-ups.
+- Orders Transactions, Bundles transactions together (something)
+- Centralized means controlled by one single entity.
+
+9) Rollup Stages ??
+- The stage of the rollup is the categorization framework
+
+Stage 0 : Full Training wheels
+- Centralized management
+- Security Council make decisions
+- Open source software for data availability
+
+Stage 1 : Enhanced Rollup Governance
+- Governed by smart contracts
+- Security Council for bug resolution
+- Decentralized fraud / validity proof submission system
+- Users have > 7 days to exit in the case of unwanted upgrades
+
+Stage 2 : No Training Wheels
+- Completely decentralized 
+- Smart contracts manage the rollup
+- Full decentralized & permissionless fraud / validity proof system
+- Ample time to exit system in the case of upgrades
+- Security council address errors adjudicated on-chain
+- User proptection against governance attacks
+
+
+10) Bridging Funds ??
+- Taking a funds from one chain and getting them on the other chain. We are not actually taking funds from one chain to another chain.
+- There is two main types of bridging mechanisms. Locking and Unlocking method.
+
+
+a) Locking and Unlocking Method: 
+Tokens are locked on the source chain so they locked inside a smart contract and they are unlocked on the destination chain.
+They are released from a smart contract and sent to your wallet from the destination chain.
+
+b) Minting and Burning Bridge Method:
+On the source chain the tokens are burned so they are send to the zero address, they are taken out of circulation, they are destroyed, they are no longer. Then token are minted to the destination chain, they are given to the user on the destination chain.

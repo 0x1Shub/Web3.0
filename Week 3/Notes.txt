@@ -1,0 +1,147 @@
+Assignment
+
+1. Create a Web Based Wallet in React. 
+    Features Generate Wallet. Get Seed Phrase, Send Money and get Faucets, etc.
+    e.g: https://wallet-kosh.vercel.app/, https://kitsunekode-creepy-wallet-sand.vercel.app/, https://optimask-wallet.vercel.app/
+
+2. Create a Project in React Like Stored the Password using the ECC or Any Cryptography Method and convert that cryptography to hased using hex algorithm. Create a Project like this. and keep the encoding and decoding process for this. Like I should get the Password and visiblilty.
+ 
+
+
+1) Keccak-256: 
+- Solana wallet public key is 44 characters. It is base58 endcoded. It is 32 bytes in size.
+- Ethereum wallet is 20 bytes size. It is 40 characters. It is using the hex endcoding. hexadecimal
+
+Properties of Keccak-256: 
+* Collision Resistance : Finding two inputs that produce same hash output should be extremely difficult.
+* Pre-image Resistance: It should nearly impossible to determine the original input from hash output.
+* Key Length: It has 256-bit hash value. which means very large output space.
+* Implementation: Implementation of Keccak-256 used is secure and free from vulnerabilities
+
+
+generateKeypair() --> public key -- keccak-256 algorithm --> 32 byte string -- last 20 byte --> 0x(20 bytes)
+
+Initially the public key is generated using the ECC - Elliptic Curve Cryptography.
+The public key is hashed using the keccak-256 algorithm.
+After hashing the public key with keccak-256 you will get 32-byte hash. From this ethereum takes last 20 bytes.
+
+
+2) HD Wallet (Hierarchical Deterministic Wallet) :
+BIP - Bitcoin Improvment Proposal, EIP - Ethereum Improvment Proposal
+- Hierarchical Deterministic Wallets are the type of wallet that can generate a tree of key pairs from a single seed. This allow for the generation of multiple addresses from a single root seed, providing both security and convenience.
+
+Problem: You Need to Maintain/Store multiple public private keys if you want to create multiple wallets.
+
+Solution - BIP-32
+Bitcoin Improvment Proposal 32 provided the solution to this problem in 2012.
+
+3) Derivations Path : m/44'/60'/0', m/44'/60'/1', m/44'/60'/1'
+
+60' - Blockchain number for ethereum 60
+
+
+4) Creating Web Based Wallets.
+
+Mnemonics - random human readable secrer recovery phrase.
+
+
+5) JSON RPC -> JSON Remote Procedure Call
+RPC (Remote Procedure Call) - Calling a function on another machine/server
+JSON-RPC means calling a function on a remote system using JSON messages.
+
+Structure of JSON RPC 
+{
+  "jsonrpc": "2.0",
+  "method": "methodName",
+  "params": [...],
+  "id": 1
+}
+
+Importtance: 
+- Works over HTTP (easy to use)
+- Lightweight and fast
+- Backbone of blockchian communication
+- Used in Ethereum, Bitcoin, etc.
+
+JSON-RPC is a simple protocol to call functions on a remote server using JSON messages.
+
+tRPC, gRPC
+
+7) RPC Servers
+- An RPC Server(or RPC Node) is a blockchian node that exposes and API so you can interact with the blockchain.
+- Its a bridge between your app and the blockchain.
+
+What Does and RPC Node Do ?
+An RPC node allows you to:
+1. 📖 Read Data
+Get wallet balance
+Get block number
+Get transaction details
+
+2. ✍️ Write Data
+Send transactions
+Deploy smart contracts
+
+3. 🔍 Query Blockchain State
+Check contract storage
+Call smart contract functions
+
+🎯 Real Flow (How Everything Connects)
+Your App (React / Backend)
+        ↓
+RPC Call (JSON-RPC)
+        ↓
+RPC Node (like Infura / Alchemy / Geth)
+        ↓
+Blockchain Network (Ethereum)
+
+⚡ Types of RPC Nodes
+🌐 Public RPC (free)
+Example: Infura
+🔒 Private RPC (your own node)
+⚡ Managed RPC (fast services)
+Example: Alchemy
+
+8) What is Alchemy?
+Alchemy is a platform that provides blockchain infrastructure so developers can easily connect their apps to blockchains like Ethereum without running their own node
+Alchemy provides ready-to-use RPC endpoints so your app can talk to blockchain.
+
+Your App (React / Backend)
+        ↓
+Alchemy RPC URL
+        ↓
+Alchemy Node Infrastructure
+        ↓
+Ethereum Blockchain
+
+Why is Alchemy Used?
+❌ Running your own node is HARD
+If you use something like Geth
+You need:
+Huge storage (100s of GBs)
+Sync time (hours/days)
+Maintenance
+
+✅ Alchemy makes it EASY
+No setup required
+Instant connection
+Scalable infrastructure
+
+⚡ Faster & Reliable
+Optimized nodes
+High uptime
+Faster responses than public RPCs
+
+🛠 Extra Developer Tools
+Alchemy also gives:
+Transaction monitoring
+Debugging tools
+Webhooks (real-time updates)
+Analytics dashboard
+
+9) Gwei, Wei, Lamports :
+gwei and wei smallest unit of eth. 
+lamports smallest unit of sol.
+
+1 eth = 10^9 gwei = 10^18 wei
+1 sol = 10^9 lamports

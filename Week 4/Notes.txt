@@ -1,0 +1,40 @@
+Solana Jargons, Programming Models, Tokens:
+
+1) What ETH and SOL solves over the Bitcoin ?? If there is Bitcoin present then what is necessary to developed Ethereum and Solana Blockchain ??
+No complex logic, No smart contracts (advanced ones), Slow + expensive during congestion
+
+
+2) How to create new Blockchain complete ??
+
+3) How to create a new token and mint coins of the new token ??
+
+4) What is token ??
+- a digital item/value created on top of a blockchain
+
+5) What is token program ??
+- Pre-built smart contract that manages tokens (create, transfer, balance, etc.)
+- Instead of writing everything from scratch, blockchains provide a standard program for tokens.
+
+On Solana
+There is a pre-built Token Program (SPL Token Program)
+It already has logic for:
+Create (mint)
+Transfer
+Balance
+Update
+👉 You just call this program
+👉 You don’t rewrite the logic
+
+🟣 On Ethereum
+👉 Your statement is NOT exactly correct
+There is no single built-in token program
+You write your own smart contract
+But follow standards like:
+ERC-20
+ERC-721
+👉 So here:
+Logic exists as a pattern (standard), not a pre-deployed program
+
+A token program is a pre-built smart contract that handles token operations.
+On some blockchains like Solana, this program is already deployed and reusable.
+On others like Ethereum, developers implement the same logic themselves using standard templates.

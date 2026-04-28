@@ -38,3 +38,79 @@ Logic exists as a pattern (standard), not a pre-deployed program
 A token program is a pre-built smart contract that handles token operations.
 On some blockchains like Solana, this program is already deployed and reusable.
 On others like Ethereum, developers implement the same logic themselves using standard templates.
+
+
+6) Accounts on Solana
+- On the solana blockchain, an "Account" is a fundamental data structure used to store various types of information.
+- Data Storage: Accounts on solana are used to store data required by programs (smart contracts) or to maintain state
+- Lamports: Accounts hold a balance of Solana native cyptocurrency, lamports. Lamports are used pay for transaction fees and to rent the space that account occupies on the blockchain.
+- Programs: On Solana, programs are special accounts that contain executable code. These accounts are distict from regular data accounts in that they are designed to be executable by blockchain when trigger by transaction.
+
+7) Types of Accounts
+- Wallet Account : Holds SOL (lamports)
+- Data Account : Stores app data
+- Program Account: Stores executable code
+- Token Account (special case): Stores token balances (via Token Program)
+
+When you are creating accounts in blockchain. You need to have some lamports in accounts otherwise it will close.
+
+8) Install Solana CLI
+-> wsl --install
+-> Search → “Ubuntu” → open it
+-> sudo apt update
+-> sudo apt upgrade -y
+-> sudo apt install curl build-essential -y
+-> sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
+-> export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+-> solana --version
+-> echo 'export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
+-> source ~/.bashrc
+
+
+9) How to give value to our own created token ?? like 1 ABC = 1000 rupess
+- You do not manually “assign” lasting value to your token.
+- The market discovers value through trading, liquidity, demand, trust, and utility.
+
+
+9) What is Liquidity Pool ??
+- A liquidity pool is a basket of two assets locked in a decentralized exchange.
+Example: ABC token & Solana (SOL)
+You deposit both into pool: 1000 ABC & 10 SOL
+Now users can swap: SOL → ABC & ABC → SOL
+without needing another buyer directly.
+
+10) How ABC Token Gets a Price ??
+If pool has: 1000 ABC & 10 SOL
+Then starting implied price: 1 ABC = 0.01 SOL
+If 1 SOL = $2500 (your example), then: 1 ABC = $25
+But this changes when people trade.
+
+
+🎯 So How Do You Give Value to ABC?
+Step 1: Create Utility
+Why should anyone want ABC?
+Examples:
+Voting rights
+Access to your app
+Rewards
+Fees discount
+Governance
+Staking
+Without utility:
+Token usually becomes speculation only.
+
+Step 2: Add Liquidity
+Create pool like:
+ABC / SOL
+ABC / USDC
+Deposit both sides.
+Example:
+1000 ABC
+100 USDC
+Then initial price:
+1 ABC = $0.10
+
+Step 3: Let Market Trade
+People buy/sell.
+Market decides real price.
+

@@ -3,6 +3,9 @@ Solana Jargons, Programming Models, Tokens:
 1) What ETH and SOL solves over the Bitcoin ?? If there is Bitcoin present then what is necessary to developed Ethereum and Solana Blockchain ??
 No complex logic, No smart contracts (advanced ones), Slow + expensive during congestion
 
+- Bitcoin only solves the one use-case decentralized currency.
+- Ethereum provide smart contracts.
+- Solana provides Speed + scalability.  
 
 2) How to create new Blockchain complete ??
 
@@ -114,3 +117,85 @@ Step 3: Let Market Trade
 People buy/sell.
 Market decides real price.
 
+11) What is Rent on the solana blockchain ??
+- Rent on Solana is the amount of SOL (stored as lamports) required to keep an account and its data stored on-chain.
+Because on Solana:
+Accounts store data
+Validators must store that data on hardware
+Storage costs resources
+
+💰 Is It Paid Every Month?
+Important beginner clarification:
+
+Not like monthly house rent.
+
+Usually what developers do:
+
+Rent-Exempt Balance
+
+They deposit enough SOL once so the account remains active.
+
+That minimum amount is called rent-exempt minimum.
+
+If account has enough balance:
+
+✅ It stays alive
+✅ No periodic deductions in normal developer experience
+
+📌 Example
+
+Suppose your app creates a data account needing 200 bytes.
+
+Solana may require some SOL minimum (varies by network rules/tools).
+
+You fund the account with that minimum.
+
+Now the account can persist.
+
+🔥 Why Does Solana Do This?
+
+To prevent spam.
+
+Without storage cost:
+
+Someone could create millions of useless accounts and bloat the chain.
+
+Rent requirement discourages junk data.
+
+🧠 Where You’ll See This as a Developer
+
+When using Anchor / Solana programs:
+
+Creating PDA or account:
+
+you allocate space
+fund account with lamports
+system program creates it
+
+Example concepts:
+
+space = 8 + data_size
+payer funds rent-exempt minimum
+🪙 Lamports Reminder
+
+1 SOL = 1,000,000,000 lamports
+
+Rent values are usually expressed in lamports.
+
+⚙️ Common Account Types Needing Rent
+App state accounts
+User profile accounts
+Token accounts
+PDA accounts
+Mint accounts
+🔄 Can You Get It Back?
+
+Often yes.
+
+If account is closed properly, remaining lamports can be returned to a destination wallet.
+
+That’s why many say it’s more like a refundable storage deposit than rent.
+
+12) Rent-Exempt Amount:
+User deposit enough SOL once so the account remains active.
+That minimum amount is called rent-exempt minimum.

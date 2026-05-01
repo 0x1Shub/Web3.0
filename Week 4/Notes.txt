@@ -199,3 +199,90 @@ That’s why many say it’s more like a refundable storage deposit than rent.
 12) Rent-Exempt Amount:
 User deposit enough SOL once so the account remains active.
 That minimum amount is called rent-exempt minimum.
+
+13) What is RPC Url ??
+- An RPC URL is the web address of a blockchain node/server that lets your wallet, CLI, or app communicate with the blockchain.
+- https://api.devnet.solana.com
+
+🔥 Why RPC is Needed
+Without RPC:
+❌ Your wallet can’t read balances
+❌ Can’t send transactions
+❌ Can’t fetch account data
+Because blockchain data must be accessed through nodes.
+
+Mainnet: https://api.mainnet-beta.solana.com
+Devnet: https://api.devnet.solana.com
+Localhost: http://127.0.0.1:8899
+
+14) Explain Mainnet, Devnet & Testnet in solana ??
+1. Mainnet (Mainnet-Beta)
+
+This is the real Solana network.
+
+✅ Used for:
+Real wallets
+Real SOL
+Real token transfers
+Real dApps
+Production apps
+💰 Money here is real
+
+If you send SOL here, it has real market value.
+
+Examples:
+Real NFT marketplaces
+Real DeFi apps
+Live tokens
+RPC Example:
+https://api.mainnet-beta.solana.com
+
+2. Devnet
+
+This is the developer practice network.
+
+✅ Used for:
+Learning Solana
+Testing smart contracts
+Creating wallets
+Airdropped free SOL
+Beginner experiments
+💸 Money here is fake / test SOL
+
+No real value.
+
+You can request free tokens:
+
+solana airdrop 2
+Best for you right now 👈
+
+Since you're learning, use Devnet.
+
+RPC Example:
+https://api.devnet.solana.com
+
+3. Testnet
+
+This is mainly for network testing, not beginner app building.
+
+✅ Used for:
+Validator testing
+Performance testing
+Protocol updates
+Stress testing new Solana releases
+Usually used by:
+Core engineers
+Infrastructure teams
+Validator operators
+Not ideal for beginners
+
+Because it may reset/change and is less focused on stable app development.
+
+RPC Example:
+https://api.testnet.solana.com
+
+15) How to Switch in CLI ??
+Use Devnet: solana config set --url devnet
+Use Mainnet: solana config set --url mainnet-beta
+Use Testnet: solana config set --url testnet
+

@@ -286,3 +286,59 @@ Use Devnet: solana config set --url devnet
 Use Mainnet: solana config set --url mainnet-beta
 Use Testnet: solana config set --url testnet
 
+16) Web2.0 Data Model Vs Solana Data Model ??
+A data model = how data is structured, stored, and accessed
+In Web2 (traditional apps):
+Data is stored in centralized databases
+Controlled by a company
+
+In Web3 (blockchain apps like Solana or Ethereum):
+Data is stored on-chain (accounts / smart contracts)
+Distributed across many nodes
+Controlled by program logic, not a company
+
+17) What is Token Program in Solana?
+The Token Program is a pre-built smart contract/program on Solana that already contains the logic for token operations.
+Token Program in Solana is a pre-written reusable on-chain program that already contains token management logic. Developers use this program to create their own tokens by creating mint accounts and token accounts instead of writing token logic from scratch.
+
+⚙️ What Logic Already Exists?
+The Token Program already knows how to:
+Create token mint
+Mint new tokens
+Transfer tokens
+Burn tokens
+Freeze accounts
+Check balances
+Manage authorities
+
+So you do NOT rewrite this logic yourself.
+
+
+18) What is Token Mint ??
+A Token Mint is the account that defines a token itself.
+
+🪙 Simple Meaning
+If token = ABC
+Then Mint Account stores things like:
+Total supply
+Decimals
+Who can create more tokens
+Token authority
+
+🧠 Why Called “Mint”?
+Because: “Minting” means creating new coins/tokens.
+
+19) USDT is a program or account ?
+USDT on Solana consists of:
+1. Token Program ✅ (Program)
+Shared Solana token engine.
+Handles: transfers, minting, balances
+This is reusable for ALL tokens.
+2. USDT Mint Account ✅ (Account)
+Defines USDT token itself.
+Stores: total supply, decimals, mint authority
+This is what people usually mean by: “USDT token”
+3. User Token Accounts ✅ (Accounts)
+Store balances.
+Example: Shubham USDT Account → 50 USDT
+

@@ -342,3 +342,58 @@ This is what people usually mean by: “USDT token”
 Store balances.
 Example: Shubham USDT Account → 50 USDT
 
+20) How to create a token program on solana CLI ??
+🪙 Example 1: Create Token Mint
+spl-token create-token
+
+Output:
+Creating token ...
+Token: ABC123...
+
+👉 This creates a Mint Account using Token Program.
+
+🪙 Example 2: Create Token Account
+spl-token create-account <TOKEN_MINT_ADDRESS>
+
+🪙 Example 3: Mint Tokens
+spl-token mint <TOKEN_MINT_ADDRESS> 1000
+
+🪙 Example 4: Check Balance
+spl-token balance <TOKEN_MINT_ADDRESS>
+
+spl-token create-token --decimals 4
+
+21) What is Associate Token Account ??
+🧠 What is an Associated Token Account (ATA)?
+An Associated Token Account is the default token account for a wallet for a specific token mint.
+Simple meaning: It is the standard place where a wallet stores a specific token balance.
+
+🪙 Why ATA Exists
+Remember:
+On Solana: SOL balance stored directly in wallet account. But SPL tokens are stored in separate token accounts
+So if you own: USDT, USDC, ABC token
+You need separate token accounts for each.
+
+🧾 Example
+Suppose:
+Wallet: Shubham Wallet
+And token mint: ABC Mint
+Then ATA becomes: Shubham's ABC Token Account
+
+🔥 Important Rule
+For every: (wallet + token mint)
+there is usually: ONE standard ATA
+
+🧠 Why “Associated”?
+Because it is mathematically associated with: wallet address, token mint address
+Its address is deterministically generated.
+
+⚙️ Why Solana Introduced ATA
+Without ATA: Users could create many random token accounts.
+Problem: confusing, hard to find balances, wallets difficult to manage
+
+So ATA gives:
+✅ standardization
+✅ predictability
+✅ compatibility
+

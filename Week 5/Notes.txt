@@ -1,0 +1,12 @@
+1) What is Wallet Adaptor in Solana ??
+In the Solana ecosystem, a Wallet Adapter is a library/framework that helps your frontend app connect to different crypto wallets like: Phantom Wallet, Solflare, Backpack, Glow Wallet
+without writing separate connection logic for every wallet.
+
+2) What are the most famous wallet adapter ??
+Solana Wallet Adapter, Wagmi, RainbowKit, Web3Modal, WalletConnect, Web3Auth
+
+3) What is DApp ??
+A dApp is an application whose core logic or backend runs on a blockchain using smart contracts instead of being fully controlled by a centralized server.
+
+Frontend + Smart Contract + Blockchain = dApp
+

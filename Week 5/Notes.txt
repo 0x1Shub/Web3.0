@@ -7,6 +7,12 @@ Solana Wallet Adapter, Wagmi, RainbowKit, Web3Modal, WalletConnect, Web3Auth
 
 3) What is DApp ??
 A dApp is an application whose core logic or backend runs on a blockchain using smart contracts instead of being fully controlled by a centralized server.
+A dApp is an application that uses blockchain smart contracts as part of its core backend logic, usually combined with wallet-based authentication and decentralized state management.
 
 Frontend + Smart Contract + Blockchain = dApp
 
+4) The point of adapter is it apates to every wallet.
+
+5) How to create the wallet apadter ??
+https://github.com/anza-xyz/wallet-adapter
+https://github.com/anza-xyz/wallet-adapter/blob/master/APP.md

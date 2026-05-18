@@ -5,6 +5,7 @@ import { WalletModalProvider, WalletDisconnectButton, WalletMultiButton } from '
 import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { clusterApiUrl } from '@solana/web3.js';
 import '@solana/wallet-adapter-react-ui/styles.css'
+import Airdrop from './Airdrop';
 
 
 const App = () => {
@@ -16,15 +17,16 @@ const App = () => {
   ], [network]);
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
-    {/* // <ConnectionProvider endpoint={"https://api.devnet.solana.com"}> */}
+    // <ConnectionProvider endpoint={endpoint}>
+     <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/UrxdAjN-s7wOo1M7Px7j7zCxWTODBcK_"}>
       <WalletProvider wallets={wallets} autoConnect>
       {/* <WalletProvider wallets={[]} autoConnect> */}
         <WalletModalProvider>
-            <div style={{display: 'flex' , justifyContent: 'space-between'}}>
-              <WalletMultiButton />
-              <WalletDisconnectButton />
+          <div style={{display: 'flex' , justifyContent: 'space-between', marginBottom: '30px'}}>
+            <WalletMultiButton />
+            <WalletDisconnectButton />
           </div>
+          <Airdrop />
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

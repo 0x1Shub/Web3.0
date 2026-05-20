@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     // <ConnectionProvider endpoint={endpoint}>
-     <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/UrxdAjN-s7wOo1M7Px7j7zCxWTODBcK_"}>
+     <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
       <WalletProvider wallets={wallets} autoConnect>
       {/* <WalletProvider wallets={[]} autoConnect> */}
         <WalletModalProvider>

@@ -1,0 +1,85 @@
+1) What is meant by Token Launchpad ??
+A Token Launchpad is a platform that helps creators create, distribute, and raise funds for a new cryptocurrency token without having to build all the infrastructure from scratch.
+Kickstarter for crypto projects, where startups launch their tokens and investors can buy them early.
+
+2) What Does a Launchpad Usually Provide?
+1. Token Creation
+Creates a token on a blockchain such as: Solana, Ethereum, BNB Chain
+You define:
+Name: SOCIAL
+Symbol: SOC
+Decimals: 9
+Supply: 1,000,000
+
+2. Token Sale
+Investors buy tokens before public launch.
+Example: 1 SOC = $0.01
+An investor pays: 100 USDC and receives: 10,000 SOC
+
+3. Liquidity Creation
+After the sale, the launchpad may automatically create a liquidity pool on a DEX.
+For example: Raydium, Uniswap
+This allows users to trade the token immediately.
+
+4. Vesting
+To prevent dumping, tokens can be locked.
+Example: Investor bought 100,000 tokens
+Month 1 -> 25,000 unlocked
+Month 2 -> 25,000 unlocked
+Month 3 -> 25,000 unlocked
+Month 4 -> 25,000 unlocked
+
+3) Types of Launchpads ??
+- IDO (Initial DEX Offering): Token launches directly on a DEX.
+Example flow:
+Project
+   ↓
+Launchpad
+   ↓
+DEX Liquidity Pool
+   ↓
+Public Trading
+
+- IEO (Initial Exchange Offering): A centralized exchange manages the token sale.
+Examples include launches on exchanges such as:
+Binance
+Bybit
+
+- ICO (Initial Coin Offering): The older model.
+Project sells tokens directly from its website.
+
+4) What is Transactions Vs Instructions in Solana ??
+Transaction = The Envelope
+A transaction is the container that is sent to the Solana network.
+It contains:
+Signatures
+Fee payer
+One or more instructions
+Transaction
+│
+├── Signature
+├── Fee Payer
+├── Instruction 1
+├── Instruction 2
+└── Instruction 3
+
+A transaction in nothing but the bunch of instructions.
+
+
+Instruction = The Actual Task
+An instruction tells a Solana program what to do.
+Examples:
+Transfer SOL
+Create token
+Mint token
+Burn token
+Create account
+
+Think of an instruction as a function call:
+transfer(
+  from,
+  to,
+  amount)
+
+When you create this transfer request, you're creating an instruction.
+

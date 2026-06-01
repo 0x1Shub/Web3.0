@@ -83,3 +83,8 @@ transfer(
 
 When you create this transfer request, you're creating an instruction.
 
+5) What is meant by polyfills ?
+Polyfills provide browser-compatible implementations (replacements/shims) for Node.js APIs.
+
+6) What actually happens when I call spl-token create-token ?? Which RPC url is Call ??
+

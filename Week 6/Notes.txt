@@ -87,4 +87,322 @@ When you create this transfer request, you're creating an instruction.
 Polyfills provide browser-compatible implementations (replacements/shims) for Node.js APIs.
 
 6) What actually happens when I call spl-token create-token ?? Which RPC url is Call ??
+spl-token create-token
+          │
+          ▼
+Load Wallet
+          │
+          ▼
+Generate Mint Keypair
+          │
+          ▼
+Build Instructions
+(CreateAccount + InitializeMint)
+          │
+          ▼
+Create Transaction
+          │
+          ▼
+Sign Transaction
+          │
+          ▼
+sendTransaction RPC
+          │
+          ▼
+RPC Node
+          │
+          ▼
+Validators
+          │
+          ▼
+Token Program Executes
+          │
+          ▼
+Mint Account Created
+          │
+          ▼
+New Token Exists
+(Supply = 0)
 
+7) What is mint ??
+A Mint Account is an account that defines a token.
+It stores information like: Token Name (via metadata), Decimals, Total Supply, Mint Authority, Freeze Authority
+Think of it as: Token Blueprint or Token Definition
+A Mint is a special Solana account that defines a token and controls its supply. It is the source from which new tokens can be created ("minted").
+
+8) What is the flow of the createMint() function ??
+Create New Currency
+        │
+        ▼
+Generate Currency ID
+        │
+        ▼
+Pay Registration Fee
+        │
+        ▼
+Create Empty Government Record
+        │
+        ▼
+Define Rules
+(Decimals, Authorities)
+        │
+        ▼
+Submit Signed Application
+        │
+        ▼
+Government Approves
+        │
+        ▼
+Currency Exists
+(Supply = 0)
+
+9) If I created the website where I can create the token mint but for token mint I require the private key. The phatom and metamask does not expose the private key ? then how the token gets generated ? User also cannot expose there private key on any website ?
+
+User Opens Launchpad
+          │
+          ▼
+Frontend Generates Mint Keypair
+          │
+          ▼
+Frontend Creates Transaction
+          │
+          ▼
+Mint Keypair Signs
+          │
+          ▼
+Phantom Popup Appears
+          │
+          ▼
+User Approves
+          │
+          ▼
+Phantom Signs
+          │
+          ▼
+Transaction Sent To RPC
+          │
+          ▼
+Token Mint Created
+
+
+A legitimate launchpad should never ask the user for:
+
+Private Key
+Seed Phrase
+Recovery Phrase
+
+If a website asks for any of those, treat it as highly suspicious.
+
+The correct approach is:
+
+Website creates transaction
+        ↓
+Wallet signs transaction
+        ↓
+Website sends signed transaction
+
+The private key never leaves the wallet, which is why users can safely create tokens, transfer funds, and interact with smart contracts through wallets like Phantom without exposing their secret keys to the website.
+
+10) Explain useWallet() ??
+const wallet = useWallet();
+
+does NOT find wallets itself.
+
+It simply reads data from React Context.
+
+Think:
+
+WalletProvider
+      │
+      ▼
+Stores wallet information
+      │
+      ▼
+useWallet()
+      │
+      ▼
+Reads wallet information
+
+Real World Analogy
+
+Imagine a hotel.
+
+Reception Desk
+    │
+    ▼
+Stores guest information
+
+Guest Room
+    │
+    ▼
+Calls reception
+
+WalletProvider = Reception Desk
+
+useWallet() = Asking reception:
+
+Who is logged in?
+What's their wallet address?
+Can they sign?
+
+
+11) Rent Exemption Logic ?? getMinimumBalanceForRentExemptMint ??
+const lamports =
+ await getMinimumBalanceForRentExemptMint(connection);
+
+returns:
+Amount of SOL
+required INSIDE the mint account
+
+not inside the wallet.
+
+Why?
+On Solana every account stores data.
+Your Mint Account stores: Decimals, Supply, Mint Authority, Freeze Authority
+Storage costs money.
+
+
+12) What Is MINT_SIZE?
+Inside SPL Token: MINT_SIZE  equals: 82 bytes
+The function basically does: How much SOL is required to permanently store 82 bytes of data?
+RPC calculates the answer.
+
+13) Why Create Account First?
+Before storing token information: Supply, Decimals, Authority
+you need storage.
+
+14) What Does InitializeMint2 Do?
+This is where the account becomes a token.
+Before: Account exists
+After: Account becomes Mint
+Real-world analogy:
+Step 1 Create blank company record.
+Company Record
+No details.
+
+Step 2 Fill details.
+Company Name
+Owner
+Registration Number 
+
+Now it becomes a real company.
+
+Same idea.
+
+What Gets Written?
+createInitializeMint2Instruction(
+   mint,
+   decimals,
+   mintAuthority,
+   freezeAuthority
+)
+
+writes:
+Decimals
+Mint Authority
+Freeze Authority
+Supply = 0
+into the Mint Account.
+
+Why Is Buffer Used?
+This part: const data = Buffer.alloc(67);
+creates raw binary data.
+Solana programs understand: Bytes
+not: {
+  decimals: 9
+}
+
+So SPL Token converts: {
+  decimals: 9,
+  authority: ...
+}
+
+into: 0109ABCDEF...
+(binary format)
+and sends it.
+
+15) Why partialSign?
+Creating an account requires:
+New Account Signature
+Think: Create Account
+needs permission from: New Account Owner
+which is: keypair
+So: transaction.partialSign(keypair);
+adds: Mint Account Signature
+
+Real World Analogy
+Imagine creating a company.
+Need signatures from:
+Founder and Company Representative
+
+16) Why wallet.signTransaction()?
+Because the transaction needs TWO signatures.
+Signature #1
+transaction.partialSign(keypair)
+
+Signs as: Mint Account
+Signature #2 wallet.signTransaction(transaction)
+
+Signs as: Payer Wallet
+
+Remember: fromPubkey: payer.publicKey
+The payer is spending SOL.
+Therefore payer MUST sign.
+
+Create Mint Transaction
+
+│
+├── Create Account
+│      └── Requires Mint Signature
+│
+├── Pay Rent
+│      └── Requires Wallet Signature
+│
+└── Initialize Mint
+
+17) What is token program vs system program ?
+System Program manages SOL and accounts.
+Token Program manages SPL tokens.
+
+18) What is meant by burnt ??
+Remove that from existance.
+In blockchain, burning a token means permanently removing it from circulation, so it can no longer be used, transferred, or spent.
+
+19) solana-keygen grind --starts-with text:1
+solana-keygen grind is a command used to generate a Solana keypair whose public key (wallet address) matches a pattern that you specify.
+
+
+1. User opens Token Launchpad.
+
+2. User connects Phantom wallet.
+
+3. useWallet() gets wallet information from WalletProvider.
+
+4. User enters token details.
+
+5. Frontend generates a new Mint Keypair.
+
+6. Transaction is created.
+
+7. System Program creates an empty account
+   that will become the Mint Account.
+
+8. Token Program initializes the Mint Account
+   and stores decimals, authorities and supply information.
+
+9. Mint Keypair partially signs because a new account
+   is being created.
+
+10. User Wallet signs because it is paying
+    the rent exemption and transaction fees.
+
+11. Signed transaction is sent to RPC.
+
+12. Validators execute the transaction.
+
+13. Mint Account is created on-chain.
+
+14. Token now exists (Supply = 0).
+
+15. Later mintTo() can be called to create
+    actual token supply.

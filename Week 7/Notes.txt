@@ -1,0 +1,44 @@
+1) What is Accounts ??
+On Solana, all data is stored in what are referred to as "accounts". The way data is organized on Solana resembles a key-values store, where each entry in the database is called an account.
+
+Key Points:
+Accounts can store up to 10MB of data, which can consist of either executable program code or program state.
+- Programs (smart contracts) are stateless accounts that stored executable code.
+- Data accounts are created by programs to store and manage program state.
+- Accounts require a rent deposit in SOL, proportional to the amount of data stored, which is fully refundable when the account is closed.
+- Every account has a program `owner`. Only the program that owns an account can modify its data or deduct its lamport balance. However, anyone can increase the balance.
+- Native programs are built-in programs included with the Solana runtime.
+
+2) What is meaning of stateless ?
+Stateless means the program itself does not store changing data.
+
+3) Types of solana accounts ??
+- Normal Account : Only Solana no data stored.
+- Program Account: Stores some solana and some data.
+- Data Account : All infomation related to the program stored.
+
+1. Wallet/System Account
+   - Stores SOL
+   - Controlled by a private key
+
+2. Program Account
+   - Stores executable smart contract code
+
+3. Data Account
+   - Stores state and data used by programs
+
+4) What is AccountInfo in solana ??
+A Rust struct that contains all the information about a Solana account during program execution.
+When a transaction calls your program, Solana passes the accounts involved in that transaction to your program. Inside your program, each account is represented as an AccountInfo.
+Account Number
+Owner
+Balance
+Permissions
+Account Data
+
+5) Is every account has owner system program in solana and what is the System Program ??
+No, not every account is owned by the System Program.
+The System Program is a built-in Solana program: System Program
+It is responsible for fundamental blockchain operations such as: Creating new accounts, Transferring SOL, Allocating account space, Assigning account ownership
+
+6) 

@@ -41,4 +41,88 @@ No, not every account is owned by the System Program.
 The System Program is a built-in Solana program: System Program
 It is responsible for fundamental blockchain operations such as: Creating new accounts, Transferring SOL, Allocating account space, Assigning account ownership
 
-6) 
+6) What is meant by BPF Loader ??
+The BPF Loader is a special built-in Solana program whose job is to:
+Store deployed program code
+Mark accounts as executable
+Load the program into memory
+Execute the program when a transaction calls it
+
+Think of it as Solana's program manager.
+
+BPF = Berkeley Packet Filter
+eBPF = Extended Berkeley Packet Filter
+
+7) What is DAG? Is Solana DAG ??
+Solana is not a DAG ledger. It is a blockchain that uses DAG-like transaction dependency graphs internally to enable parallel execution and high throughput.
+
+8) What is System Program ??
+Solana contains a small handful of native programs that are part of the validator implementation and provide various core functionalities for the network.
+When developing custom programs on Solana, you will commonly interact with two native programs, the `System Program` and the `BPF Loader`.
+
+
+9) What is meant by Cross Program Invocation (CPI) ?
+Programs can call other programs.
+Your Program
+      ↓
+Calls
+      ↓
+System Program
+
+10) What are the different types of programs ??
+a) Native Programs (Built-in Programs)
+   - Created by Solana developers
+   - Shipped with the Solana network
+   - Examples:
+     • System Program
+     • Stake Program
+     • Vote Program
+     • BPF Loader
+
+b) SPL Programs (Non-Native but Official Programs)
+   - Created by Solana developers/Solana ecosystem
+   - Deployed on-chain like normal programs
+   - Not built into the validator software
+   - Examples:
+     • Token Program
+     • Associated Token Account Program
+     • Token-2022 Program
+
+c) Developer-Created Programs
+   - Created by any Solana developer
+   - Deployed to the blockchain
+   - Examples:
+     • Decentralized Uber
+     • FundMe Program
+     • NFT Marketplace
+     • DEX
+
+11) How to create a new account with data and rent  ??
+
+12) How to transfer lamports from your account to another account ??
+
+13) Change the owner of the account ??
+
+14) What is difference betweeb owner and authority in solana ??
+Owner: The program that is allowed to modify an account's data.
+Authority: The user (or account) that is allowed to perform certain actions defined by a program.
+
+15) Authority in solana program ??
+In Solana programs, authorities are entities or accounts that have the right to perform certain actions or make changes within the program.
+Token mint authority - Can mint new tokens
+Token freeze authority - Can freeze tokens in an account
+Upgrade authority - Can upgrade the code of a program.
+
+16) How to create and revoke mint authority ??
+a. Create a new token
+   i) spl-token create-token
+b. create an ATA
+   ii) spl-token create-account <token_mint_address>
+c. Mint Some token
+   iii) spl-token mint <token_mint_address>
+d. Revoke mint autority
+   iv) spl-token authorize <token_id> mint —disable
+e. Mint again / Check Explorer
+   v) spl-token mint <token_mint_address> 10000000000
+
+

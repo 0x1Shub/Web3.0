@@ -1,0 +1,18 @@
+1) What is dapp ??
+- A dApp (Decentralized Application) is an application whose backend logic runs on a blockchain or decentralized network
+instead of being controlled entirely by a single centralized server.
+
+2) Why it is called dapp ??
+It is called a dApp because the "d" stands for decentralized.
+
+3) What does the dapp do ??
+A dapp request users to sign the transactions using their wallet.
+So a dApp is not only for signing transactions, but signing is how users authorize the dApp to perform blockchain actions on their behalf.
+
+4) Flow of dapp ??
+- User comes to wallet.
+- User finalises their transaction.
+- Dapp requests approval from user wallet.
+
+
+

@@ -14,5 +14,29 @@ So a dApp is not only for signing transactions, but signing is how users authori
 - User finalises their transaction.
 - Dapp requests approval from user wallet.
 
+5) What is difference between wallet.sendTransaction and connection.sendTransaction ??
+wallet.sendTransaction()
+Create Transaction
+      ↓
+Wallet signs
+      ↓
+Wallet sends to RPC
+      ↓
+Blockchain executes
+The wallet popup appears (Phantom, Solflare, etc.).
 
 
+connection.sendTransaction()
+Flow:
+Create Transaction
+      ↓
+Sign using Keypair
+      ↓
+Connection sends
+      ↓
+Blockchain executes
+
+No wallet popup.
+
+
+6) What is meant by signing message ??

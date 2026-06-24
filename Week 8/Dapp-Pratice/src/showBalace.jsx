@@ -1,13 +1,14 @@
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import React, { useEffect } from 'react'
 
-const showBalace = () => {
+const ShowBalace = () => {
     const { connection } = useConnection();
     const wallet = useWallet();
 
     const getBalance = async () => {
         const balance = await connection.getBalance(wallet.publicKey);
-        document.getElementById('balance').innerHTML = balance;
+        document.getElementById('balance').innerHTML = balance / LAMPORTS_PER_SOL;
     }
 
     useEffect(() => {
@@ -21,4 +22,4 @@ const showBalace = () => {
   )
 }
 
-export default showBalace
+export default ShowBalace;
